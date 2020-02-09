@@ -69,11 +69,12 @@ class Calculator:
             self.clear()
             return
         l = ["/","*","-","+","."]
+        l2 = ["/","*"]
         if ans[-1] in l and event.widget["text"] in l:
             ans = ans[0:len(ans)-1] + event.widget["text"]
             self.ans.config(text=ans)
             return
-        ans = event.widget["text"] if ans ==  "0" or ans in l else ans + event.widget["text"]
+        ans = event.widget["text"] if ans ==  "0" or ans in l2 else ans + event.widget["text"]
         self.ans.config(text=ans)   
         
     def equate(self, exp):
